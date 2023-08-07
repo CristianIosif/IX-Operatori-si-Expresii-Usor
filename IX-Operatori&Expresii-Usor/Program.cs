@@ -4,16 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace IX_Operatori_Expresii_Usor
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            Problema_2061();
-            Console.ReadKey();
-        }
+
         public static void Problema_939()
         // Se dau 2 numere naturale. Calculaţi suma celor 2 numere date.
         {
@@ -59,11 +56,11 @@ namespace IX_Operatori_Expresii_Usor
             int s2 = x * y;
             int s3 = x / y;
 
-            Console.WriteLine(s+" "+s1+" "+s2+" "+s3);
+            Console.WriteLine(s + " " + s1 + " " + s2 + " " + s3);
         }
 
         public static void Problema_1273()
-        //Se dau două numere naturale x și y. Calculați ultima cifră a sumei lor.Se dau două numere naturale x și y. Calculați ultima cifră a sumei lor.
+        //Se dau două numere naturale x și y. Calculați ultima cifră a sumei lor.
         {
             string t = (Console.ReadLine());
             string[] d = t.Split(' ');
@@ -213,7 +210,8 @@ namespace IX_Operatori_Expresii_Usor
             Console.ReadKey();
         }
         public static void Problema_3180()
-        //Pe planeta Marte banii sunt altfel decât la noi. Există 3 tipuri de monede: primul tip de monedă valorează a lei marțieni, al doilea tip valorează b lei marțieni, iar al treilea tip de monedă valorează c lei marțieni. Marțianul Iggle are n monede de primul tip, m monede de al doilea tip și p monede de al treilea tip. Câți lei marțieni are Iggle?
+        //Pe planeta Marte banii sunt altfel decât la noi. Există 3 tipuri de monede: primul tip de monedă valorează a lei marțieni, al doilea tip valorează b lei marțieni, iar al treilea tip de monedă valorează c lei marțieni.
+        //Marțianul Iggle are n monede de primul tip, m monede de al doilea tip și p monede de al treilea tip. Câți lei marțieni are Iggle?
         {
             string input = Console.ReadLine();
             string[] d = input.Split(' ');
@@ -248,26 +246,7 @@ namespace IX_Operatori_Expresii_Usor
             Console.WriteLine(sum.ToString());
             Console.ReadKey();
         }
-        public static void Problema_3181()
-        //Pe planeta Marte anul marțian durează x zile marțiene, iar o zi marțiană durează y ore. În fiecare oră, marțianului Iggle îi crește o antenă. După cât timp va avea Iggle n antene?
-        {
-            string input = Console.ReadLine();
-            string[] d = input.Split(' ');
 
-            int x = int.Parse(d[0]);
-            int y = int.Parse(d[1]);
-            int n = int.Parse(d[2]);
-
-            int a = n / (x * y);
-            int ore = n % (x * y);
-            int z = ore / (y);
-            int h = ore % y;
-
-            Console.WriteLine(a.ToString());
-            Console.WriteLine(z.ToString());
-            Console.WriteLine(h.ToString());
-            Console.ReadKey();
-        }
         public static void Problema_815()
         //Câte cutii cubice de latură l pot fi suprapuse într-o încăpere de înălțime h.
         {
@@ -309,9 +288,99 @@ namespace IX_Operatori_Expresii_Usor
 
             Console.WriteLine(s.ToString());
         }
-        public static void Problema_4()
+        public static void Problema_2764()
+        //Orice culoare poate fi reprezentată drept o combinație de intensități de roșu (RED), verde (GREEN) și albastru (BLUE). Calculatorul tău folosește, cel mai probabil, culori reprezentate pe 24 de biți,
+        //câte 8 rezervați fiecăreia dintre cele trei culori anterior menționate.
+        //Definim opusul unei culori(r, g, b) ca fiind(255 – r, 255 – g, 255 – b).
         {
+            string[] t = Console.ReadLine().Split(' ');
 
+            int r = int.Parse(t[0]);
+            int g = int.Parse(t[1]);
+            int b = int.Parse(t[2]);
+
+            int R = 255 - r;
+            int G = 255 - g;
+            int B = 255 - b;
+
+            Console.WriteLine(R + " " + G + " " + B);
+            Console.ReadKey();
+
+        }
+
+        public static void Problema_102()
+        //Să se scrie un program care citeşte de la tastatură un număr natural cu cel puţin două cifre
+        //şi determină suma dintre cifra zecilor şi cifra unităţilor numărului citit.
+        {
+            string[] t = Console.ReadLine().Split(' ');
+
+            int x = int.Parse(t[0]);
+
+            int x1 = x % 10;
+            int x2 = x / 10 % 10;
+
+            int s = x1 + x2;
+            Console.WriteLine(s.ToString());
+            Console.ReadKey();
+        }
+
+        public static void Problema_1282()
+        //Se dă un număr. Să se afișeze rădăcina sa pătrată.
+        {
+            string[] t = Console.ReadLine().Split(' ');
+
+            int n = int.Parse(t[0]);
+
+            Console.WriteLine(Math.Sqrt(n));
+            Console.ReadKey();
+        }
+
+        public static void Problema_2599()
+        {
+            string[] t = Console.ReadLine().Split(' ');
+
+            int a = int.Parse(t[0]);
+            int s = a += a * 16;
+
+            Console.WriteLine(s.ToString());
+            Console.ReadKey();
+
+            // ???????????????????????????????????????????????????????????????????
+        }
+
+        public static void Problema_2377()
+        //Se cunoaște faptul ca n pisici mănâncă n șoareci în n minute. Sa se determine în cat timp mănâncă m pisici m șoareci.
+        {
+            string[] t = Console.ReadLine().Split(' ');
+
+            int n = int.Parse(t[0]);
+            int m = int.Parse(t[1]);
+
+
+        }
+
+        public static void Problema_1343()
+        //Se dă un număr real n. Să se afișeze rădăcina sa pătrată.
+        {
+            string[] t = Console.ReadLine().Split(' ');
+
+            double n = double.Parse(t[0]);
+
+            Console.WriteLine(Math.Sqrt(n));
+        }
+
+
+
+
+
+
+
+
+
+        static void Main(string[] args)
+        {
+            Problema_1343();
+            Console.ReadKey();
         }
     }
 }
